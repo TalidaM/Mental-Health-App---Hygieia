@@ -1,0 +1,179 @@
+﻿@model MentalHealthApp.BusinessLogic.Implementation.Appointments.ViewModels.AppointmentModel 
+<head>
+    <link  rel="stylesheet" href="~/css/createAppointments.css"/>
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="~/css/dropdownAppointments.css">
+     <script src="~/js/appointment/viewAppoinments.js"></script>
+ </head>  
+   <!-- BREADCRUM-PART START -->
+      
+      <section class="breadcrumb-bar">
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-lg-12 col-md-12 col-12">
+                      <nav class="page-breadcrum" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                              <li class="breadcrumb-item"><a href="@Url.Action("DoctorsProfile","Profile")">Doctors</a></li>
+                              <li class="breadcrumb-item"><a asp-action="DoctorInfoById" asp-controller="Profile" asp-route-id="@Model.SpecialistId">Doctor Profile</a></li>
+                             <li class="breadcrumb-item active" aria-current="page">Create Appointment</li>
+
+                              </ol>
+                          </nav>
+                          <h3 class="breadcrumb-title">Create Appointments</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <!-- BREADCRUM-PART END -->
+ <body> 
+   
+        <div class="row">
+            <div class="col offset-md-1">
+                <form asp-action="CreateAppointment" asp-controller="Programari">
+                        <div class="col form-group">
+                            <label asp-for="DataProgramare" class="required">Date</label>
+                            <input asp-for="DataProgramare" class="form-control date-input" type="datetime-local" id="date" data-trigger="hover" data-toggle="popover" data-content="You can select any date from today clicking on the number in the calendar" required>
+                           <span asp-validation-for="DataProgramare" class="text-danger"></span>
+                        </div>
+       
+                        <div class="col form-group">
+                            <label asp-for="TipProgramare" class="required">Tip sedinta (Fizic/Online)</label>
+                            <span class="custom-dropdown big" >
+                                                <select style="background:white" asp-for="TipProgramare" class="form-control"  id="description">    
+                                                        <option>Online</option>
+                                                        <option>Fizic</option>
+                                                    </select>
+                                            </span>
+                             @*<input asp-for="TipProgramare" class="form-control" type="text" id="description">*@
+                          @*  <select>
+                                    <option >Fizic</option>
+                                     <option>Online</option>
+                            </select>*@
+                             <span asp-validation-for="TipProgramare" class="text-danger"></span>
+                    </div>
+                      <div class="col form-group" hidden="hidden">
+                            <label asp-for="SpecialistId" class="control-label">Specialist</label>
+                            <input asp-for="SpecialistId" class="form-control" type="text" id="description" value="@Model.SpecialistId"/>
+                           <span asp-validation-for="SpecialistId" class="text-danger"></span>
+                        </div>
+                        <div></div>
+                    <div class="form-row">
+                        <div class="col form-group">
+                            <button type="submit" value="Save" class="btn btn-primary" id="submit">Make Appointment</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+              <div class="col offset-md-1">
+                <div class="row">
+                    <div class="col">
+                        <h3>Program medic</h3>
+                    </div>
+                </div>
+                <table class="table table-bordered table-hover table-striped table-sm" id="appointment_list">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col" class="text-center align-middle">Work Day</th>
+                            <th scope="col" class="text-center align-middle">Start</th>
+                            <th scope="col" class="text-center align-middle">End</th>
+                            <th scope="col" class="text-center align-middle">Notes</th>
+
+              @foreach(var program in @Model.DoctorWorkProgramVMs)
+                {
+                    <tr >
+                        <td>@program.WorkDay</td>
+                        <td>@program.Start</td>
+                        <td>@program.End</td>
+                        <td>@program.Notes</td>
+                    </tr>
+                }
+            </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+
+            
+             <div class="col offset-md-1">
+                <div class="row">
+                    <div class="col">
+                        <h3>Date Rezervate</h3>
+                    </div>
+                </div>
+                <table class="table table-bordered table-hover table-striped table-sm" id="appointment_list">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col" class="text-center align-middle">Data si Ora</th>
+        
+
+              @foreach(var programare in @Model.AcceptedAppointmentsData)
+                {
+                    <tr >
+                        <td>@programare.DataProgramare</td>
+                    </tr>
+                }
+            </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+               @*  <a  class="btn btn-std mb-link" asp-action="GetAcceptedAppointments" asp-controller="Profile" asp-route-pageAppointments="@(Model.pageAppointments - 1)">Previous Page</a>
+            <a  class="btn btn-std mb-link"  asp-action="GetAcceptedAppointments" asp-controller="Profile" asp-route-pageAppointments="@(Model.pageAppointments + 1)" >Next Page</a>
+            <p id="page-number">Page @(Model.pageAppointments + 1)</p>*@
+            </div>
+
+            <div class="col offset-md-1">
+                <div class="row">
+                    <div class="col">
+                        <h3>Programarile tale</h3>
+                    </div>
+                </div>
+                <table class="table table-bordered table-hover table-striped table-sm" id="appointment_list">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col" class="text-center align-middle">Id Programare</th>
+                            <th scope="col" class="text-center align-middle">Data si Ora</th>
+                            <th scope="col" class="text-center align-middle">Medic</th>
+                            <th scope="col" class="text-center align-middle">Tip sedinta</th>
+                            <th scope="col" class="text-center align-middle">Status</th>
+
+              @foreach(var programare in @Model.AppointmentsVMs)
+                {
+                    <tr >
+                        <td>@programare.Id</td>
+                        <td>@programare.DataProgramare</td>
+                        <td>@programare.Doctor</td>
+                        <td>@programare.TipProgramare</td>
+                        <td>@programare.StareProgramare</td>
+                    </tr>
+                }
+            </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            @* <a  class="btn btn-std mb-link" asp-action="GetAllAppointments" asp-controller="Profile" asp-route-currentUserAppointments="@(Model.currentUserAppointments - 1)">Previous Page</a>
+            <a  class="btn btn-std mb-link"  asp-action="GetAllAppointments" asp-controller="Profile" asp-route-currentUserAppointments="@(Model.currentUserAppointments + 1)" >Next Page</a>
+            <p id="page-number">Page @(Model.currentUserAppointments + 1)</p>*@
+        </div>
+ 
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+  
+</body>
+
+<script>
+function PreviousPage() {
+    const email = window.localStorage.getItem("medic: ");
+     $.ajax({
+        url: "/Profile/DoctorInfo",
+        type: "GET",
+         data: {email : email},
+        dataType: "html",
+    });
+}
+</script>

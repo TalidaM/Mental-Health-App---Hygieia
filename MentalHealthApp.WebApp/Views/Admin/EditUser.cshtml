@@ -1,0 +1,104 @@
+﻿@model MentalHealthApp.BusinessLogic.Implementation.Account.ViewModels.UserVM
+@using MentalHealthApp.Entities.Enums
+<head>
+<link rel="stylesheet" type="text/css" href="~/css/dropdownAppointments.css">
+</head>
+    <h2>Edit user</h2>
+  <form method="post" >
+      <div asp-validation-summary="All" class="text-danger"></div> 
+    <div class="form-group">
+      <label  asp-for="LastName">Nume</label>
+      <input class="form-control" asp-for="LastName" />
+       <span asp-validation-for="LastName"class="text-danger"></span>
+
+    </div>
+    <div class="form-group">
+      <label  asp-for="FirstName">Prenume</label>
+      <input class="form-control" asp-for="FirstName" rows="3" >
+      <span asp-validation-for="FirstName"class="text-danger"></span>
+    </div>
+    <div class="form-group" hidden="hidden">
+      <label  asp-for="BirthDate">Zi Nastere</label>
+      <input type="date" class="form-control" asp-for="BirthDate"/>
+      <span asp-validation-for="BirthDate" class="text-danger"></span>
+    </div>
+    <div class="form-group" hidden="hidden">
+      <label  asp-for="Email">Email</label>
+      <input type="email" class="form-control" asp-for="Email"  />
+      <span asp-validation-for="Email"class="text-danger"></span>
+    </div>
+     <div class="form-group">
+      <label  asp-for="PhoneNumber">Numar Contact</label>
+      <input  class="form-control" asp-for="PhoneNumber"  />
+      <span asp-validation-for="PhoneNumber"class="text-danger"></span>
+    </div>      
+    <div class="form-group">
+      <label  asp-for="Username">Username</label>
+      <input  class="form-control" asp-for="Username"   />
+      <span asp-validation-for="Username"class="text-danger"></span>
+    </div>
+    <div class="form-group">
+      <label  asp-for="Categorie">Categorie: Categorie</label>
+       <span class="custom-dropdown big" >
+                    <select style="background:white" asp-for="Categorie" class="form-control"  id="description">    
+                            <option>@Categories.Angajat.ToString()</option>
+                            <option>@Categories.Elev.ToString()</option>
+                            <option>@Categories.Student.ToString()</option>
+                            <option>@Categories.Pensionar.ToString()</option>
+                    </select>
+                </span>
+      <span asp-validation-for="Categorie"class="text-danger"></span>
+    </div>
+    <div class="form-group">
+      <label  asp-for="Asigurat">Asigurat(Da/Nu)</label>
+      <span class="custom-dropdown big" >
+            <select style="background:white" asp-for="Asigurat" class="form-control"  id="description">    
+                    <option>Da</option>
+                    <option>Nu</option>
+            </select>
+       </span>
+      <span asp-validation-for="Asigurat"class="text-danger"></span>
+    </div>
+    <div class="form-group">
+      <label  asp-for="Tara">Tara: Tara</label>
+      <input class="form-control" asp-for="Tara"  />
+      <span asp-validation-for="Tara"class="text-danger"></span>
+    </div>
+    <div class="form-group">
+      <label  asp-for="Judet">Judet: Judet</label>
+      <input class="form-control" asp-for="Judet"  />
+      <span asp-validation-for="Judet"class="text-danger"></span>
+    </div>
+    <div class="form-group">
+      <label  asp-for="Oras">Oras Oras</label>
+      <input  class="form-control" asp-for="Oras"/>
+      <span asp-validation-for="Oras"class="text-danger"></span>
+    </div>
+    <div class="form-group">
+      <label  asp-for="StradaNumar">Strada, Numar</label>
+      <input class="form-control" asp-for="StradaNumar" />
+      <span asp-validation-for="StradaNumar"class="text-danger"></span>
+    </div>
+    <div class="form-group">
+      <label  asp-for="BlocScaraApartament">Bloc, Scara, Apartament</label>
+      <input  class="form-control" asp-for="BlocScaraApartament" />
+      <span asp-validation-for="BlocScaraApartament"class="text-danger"></span>
+    </div>
+    <div class="form-group">
+      <label  asp-for="CodPostal">Cod Postal: CodPostal</label>
+      <input  class="form-control" asp-for="CodPostal"  />
+      <span asp-validation-for="CodPostal"class="text-danger"></span>
+    </div>
+    <div class="form-group">
+      <label  asp-for="Sector">Sector: Sector</label>
+      <input  class="form-control" asp-for="Sector" />
+      <span asp-validation-for="Sector"class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <button type="submit"  class="btn btn-default">Cancel</button>
+  </form>
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

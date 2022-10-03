@@ -1,0 +1,85 @@
+﻿@model MentalHealthApp.BusinessLogic.Implementation.Account.ViewModels.DoctorVM
+
+
+    <h2>Edit user</h2>
+  <form method="post" >
+      <div asp-validation-summary="All" class="text-danger"></div> 
+    <div class="form-group">
+      <label  asp-for="LastName">Nume</label>
+      <input class="form-control" asp-for="LastName" />
+       <span asp-validation-for="LastName"class="text-danger"></span>
+
+    </div>
+    <div class="form-group">
+      <label  asp-for="FirstName">Prenume</label>
+      <input class="form-control" asp-for="FirstName" rows="3" >
+      <span asp-validation-for="FirstName"class="text-danger"></span>
+    </div>
+    <div class="form-group" hidden="hidden">
+      <label  asp-for="Email">Email</label>
+      <input type="email" class="form-control" asp-for="Email"  />
+      <span asp-validation-for="Email"class="text-danger"></span>
+    </div>
+     <div class="form-group">
+      <label  asp-for="PhoneNumberCountryPrefix">Prefix Phone Nmber</label>
+      <input  class="form-control" asp-for="PhoneNumberCountryPrefix"  />
+      <span asp-validation-for="PhoneNumberCountryPrefix"class="text-danger"></span>
+    </div> 
+     <div class="form-group">
+      <label  asp-for="PhoneNumber">Numar Contact</label>
+      <input  class="form-control" asp-for="PhoneNumber"  />
+      <span asp-validation-for="PhoneNumber"class="text-danger"></span>
+    </div>      
+    <div class="form-group">
+      <label  asp-for="Descriere">Descriere</label>
+      <input  class="form-control" asp-for="Descriere"   />
+      <span asp-validation-for="Descriere"class="text-danger"></span>
+    </div>
+    <div class="form-group">
+      <label  asp-for="durataProgramare">Durata Sedinta</label>
+      <input class="form-control" asp-for="durataProgramare" rows="3" >
+      <span asp-validation-for="durataProgramare"class="text-danger"></span>
+    </div>
+    <div class="form-group">
+      <label  asp-for="Tara">Tara</label>
+      <input class="form-control" asp-for="Tara"  />
+      <span asp-validation-for="Tara"class="text-danger"></span>
+    </div>
+    <div class="form-group">
+      <label  asp-for="Judet">Judet</label>
+      <input class="form-control" asp-for="Judet"  />
+      <span asp-validation-for="Judet"class="text-danger"></span>
+    </div>
+    <div class="form-group">
+      <label  asp-for="Oras">Oras </label>
+      <input  class="form-control" asp-for="Oras"/>
+      <span asp-validation-for="Oras"class="text-danger"></span>
+    </div>
+    <div class="form-group">
+      <label  asp-for="StradaNumar">Strada, Numar</label>
+      <input class="form-control" asp-for="StradaNumar" />
+      <span asp-validation-for="StradaNumar"class="text-danger"></span>
+    </div>
+    <div class="form-group">
+      <label  asp-for="BlocScaraApartament">Bloc, Scara, Apartament</label>
+      <input  class="form-control" asp-for="BlocScaraApartament" />
+      <span asp-validation-for="BlocScaraApartament"class="text-danger"></span>
+    </div>
+    <div class="form-group">
+      <label  asp-for="CodPostal">Cod Postal</label>
+      <input  class="form-control" asp-for="CodPostal"  />
+      <span asp-validation-for="CodPostal"class="text-danger"></span>
+    </div>
+    <div class="form-group">
+      <label  asp-for="Sector">Sector</label>
+      <input  class="form-control" asp-for="Sector" />
+      <span asp-validation-for="Sector"class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <button type="submit"  class="btn btn-default">Cancel</button>
+  </form>
+
+
+<div>
+    <a asp-action="Dashboard">Back to List</a>
+</div>

@@ -1,0 +1,181 @@
+﻿@model MentalHealthApp.Common.DTOs.EditDoctorDto
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+  
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+
+    <link href="~/css/map.css" rel="stylesheet" type="text/css" />
+    <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoXRvHuYgJDyVIhkYxJN8zhPa_6tRbces&libraries=places"></script>
+    <script  defer src="~/js/googleAPIScript.js" type="text/javascript"></script>  
+
+    <title>JrP Creation</title>
+  </head>
+  <body >
+      <!-- BREADCRUM-PART START -->
+      
+      <section class="breadcrumb-bar">
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-lg-12 col-md-12 col-12">
+                      <nav class="page-breadcrum" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                              <li class="breadcrumb-item"><a href="DoctorsProfile">Doctors</a></li>
+                              <li class="breadcrumb-item active" aria-current="page">Doctor Profile</li>
+                              </ol>
+                          </nav>
+                          <h3 class="breadcrumb-title">Doctor Profile</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <!-- BREADCRUM-PART END -->
+
+    <!--DOCTOR PROFILE PART START -->
+<section class="doctor-profile py-3">
+    <div class="container">
+      
+      <div class="row" >
+        <div class="col-lg-6 profile-box">
+          <div class="media d-flex">
+             @{ 
+                 var base64 = Convert.ToBase64String(@Model.DoctorImage);                  
+                 var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                 if(@imgSrc == "data:image/gif;base64,")
+                 {
+                     <img style="width: 140px; height: 140px;" class ="mr-4" src="~/images/Userprofile.jpg" alt="">
+                 }
+                 else{
+                      <img style="width: 140px; height: 140px;" class ="mr-4" src="@imgSrc" alt="" />
+                 }
+              } 
+                               
+              <div class="media-body flex-grow-1">
+              <h3> Dr. @Model.LastName @Model.FirstName</h3>
+                <span style="color: white; text-shadow: 2px 2px 3px black; font-size: 20px;">@Model.Specialitate</span>
+              <p> <i class="fas fa-map-marker-alt"></i>  @Model.Oras, @Model.Tara</p>
+              <a  style="color: white; text-shadow: 2px 2px 3px black; font-size: 20px;" class="d-block" href="tel:@Model.PhoneNumber">@Model.PhoneNumberCountryPrefix @Model.PhoneNumber</a>
+              <h5 >Email:</h5>
+               <p id="emailM">@Model.Email</p>
+               <div>
+              <svg  style="background-color: white;" focusable="false" width="20" height="20" viewBox="0 0 24 24" class="AJ50zb NMm5M" aria-hidden="true"><path d="M16.24 7.75A5.974 5.974 0 0 0 12 5.99v6l-4.24 4.24c2.34 2.34 6.14 2.34 8.49 0a5.99 5.99 0 0 0-.01-8.48zM12 1.99c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10-4.48-10-10-10zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"></path></svg>
+              <div style="color: white; text-shadow: 2px 2px 3px black; font-size: 20px;">@Model.durataProgramare min durata sedintei</div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        </div>
+    </div>
+  </section>
+  <!--DOCTOR PROFILE PART END -->
+
+ <section class="best-services-section">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+             <div class="Services-item">
+
+                   <div class="service-border">
+                    <ul class="nav mb-3 text-center overview-service" id="pills-tab" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link" id="pills-home-tab" data-toggle="pill" href="#pills-Overview" role="tab" aria-controls="pills-home" aria-selected="true">
+                        <strong class="d-block">Descriere</strong></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-Hospital" role="tab" aria-controls="pills-profile" aria-selected="false">
+                       <strong class="d-block">Locatie Cabinet</strong></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="@Url.Action("Appointments", "Profile", new {id=@Model.SpecialistId})" id="pills-contact-tab" onclick="SetInLocalStorage()" >
+                           <strong class="d-block">Programare Sedinta</strong></a>
+                        </li>
+                       </ul>
+                   </div>
+
+                   <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-Overview" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <div class="about-sec">
+                      <div class="row">
+                       
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                          <div class="Review-tab-content">
+                            <h3>Despre</h3>
+                            <p>@Model.Descriere</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div></div>
+              
+          
+                     <div class="tab-pane fade" id="pills-Hospital" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        <div class="col-lg-12 col-sm-12">
+                          <div class="hospital-info">
+                           <div class="hospital-name">
+                              <h3>Locatie Clinica</h3>
+                                @*<span>MDS - Periodontology and Oral Implantology, BDS</span>*@
+                              
+                                            @{
+                                                if ((!@Model.BlocScaraApartament.Equals('-') || @Model.BlocScaraApartament != null) & @Model.Sector != null)
+                                                {
+                                                                        <p id="p-adresa"> <i class="fas fa-map-marker-alt"></i>@Model.Tara,  @Model.Oras, @Model.Sector, @Model.StradaNumar, @Model.BlocScaraApartament</p>
+                                                }
+                                                if(@Model.Sector == null & (@Model.BlocScaraApartament.Equals('-') || @Model.BlocScaraApartament == null))
+                                                {
+                                                                        <p id="p-adresa"> <i class="fas fa-map-marker-alt"></i>@Model.Tara,  @Model.Oras, @Model.StradaNumar</p>   
+
+                                                }
+                                                if(@Model.Sector != null & (@Model.BlocScaraApartament.Equals('-') || @Model.BlocScaraApartament == null))
+                                                {
+                                                                     <p id="p-adresa"> <i class="fas fa-map-marker-alt"></i>@Model.Tara,  @Model.Oras, @Model.Judet @Model.Sector, @Model.StradaNumar</p>   
+                                                }
+                                            }
+                              
+                              <a class="d-block" href="tel:@Model.PhoneNumber">@Model.PhoneNumber</a>
+                              
+                              </div>
+                          </div>
+                        </div>
+
+                        <div>
+                          <input id="txtsearch" class="apply" type="text" placeholder="Search a medical office" value="@Model.Tara,  @Model.Oras, @Model.StradaNumar, @Model.BlocScaraApartament">  
+                        <div>
+                            <div id="map" style="position:relative; z-index: 2; height: 500px; width: 100%; padding: 25px;">
+                            </div>
+                       </div>
+                        </div>
+
+
+                      </div>
+                   
+                    </div>
+                    
+                </div>
+                   </div>
+                      </div>
+                      </div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+     
+    <!-- Optional JavaScript -->
+    <!-- Popper.js first, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+  </body>
+</html>
