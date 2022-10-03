@@ -1,0 +1,415 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.WebApp\\MentalHealthApp.WebApp.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.BusinessLogic\\MentalHealthApp.BusinessLogic.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.BusinessLogic\\MentalHealthApp.BusinessLogic.csproj",
+        "projectName": "MentalHealthApp.BusinessLogic",
+        "projectPath": "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.BusinessLogic\\MentalHealthApp.BusinessLogic.csproj",
+        "packagesPath": "C:\\Users\\talida.dobre\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.BusinessLogic\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\talida.dobre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.DataAccess\\MentalHealthApp.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.DataAccess\\MentalHealthApp.DataAccess.csproj"
+              },
+              "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.Entities\\MentalHealthApp.Entities.csproj": {
+                "projectPath": "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.Entities\\MentalHealthApp.Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.1.1, )"
+            },
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.Common\\MentalHealthApp.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.Common\\MentalHealthApp.Common.csproj",
+        "projectName": "MentalHealthApp.Common",
+        "projectPath": "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.Common\\MentalHealthApp.Common.csproj",
+        "packagesPath": "C:\\Users\\talida.dobre\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\talida.dobre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.DataAccess\\MentalHealthApp.DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.DataAccess\\MentalHealthApp.DataAccess.csproj",
+        "projectName": "MentalHealthApp.DataAccess",
+        "projectPath": "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.DataAccess\\MentalHealthApp.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\talida.dobre\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\talida.dobre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.Entities\\MentalHealthApp.Entities.csproj": {
+                "projectPath": "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.Entities\\MentalHealthApp.Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.Entities\\MentalHealthApp.Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.Entities\\MentalHealthApp.Entities.csproj",
+        "projectName": "MentalHealthApp.Entities",
+        "projectPath": "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.Entities\\MentalHealthApp.Entities.csproj",
+        "packagesPath": "C:\\Users\\talida.dobre\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.Entities\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\talida.dobre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.Common\\MentalHealthApp.Common.csproj": {
+                "projectPath": "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.Common\\MentalHealthApp.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.WebApp\\MentalHealthApp.WebApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.WebApp\\MentalHealthApp.WebApp.csproj",
+        "projectName": "MentalHealthApp.WebApp",
+        "projectPath": "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.WebApp\\MentalHealthApp.WebApp.csproj",
+        "packagesPath": "C:\\Users\\talida.dobre\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.WebApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\talida.dobre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.BusinessLogic\\MentalHealthApp.BusinessLogic.csproj": {
+                "projectPath": "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.BusinessLogic\\MentalHealthApp.BusinessLogic.csproj"
+              },
+              "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.DataAccess\\MentalHealthApp.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\talida.dobre\\source\\repos\\MHApp\\TalidaDobre\\MentalHealthApp.DataAccess\\MentalHealthApp.DataAccess.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "FontAwesome": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
+            "Microsoft.AspNet.Mvc": {
+              "target": "Package",
+              "version": "[5.2.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.8, )"
+            },
+            "PagedList.Mvc": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerGen": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerUI": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            },
+            "libphonenumber-csharp": {
+              "target": "Package",
+              "version": "[8.9.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
